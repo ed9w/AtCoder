@@ -8,10 +8,16 @@
 #include <cmath>
 
 int main(){
-    int d, n;
-    std::cin>>d>>n;
+    std::string s;
+    std::cin>>s;
 
-    int ans = (n < 100 ? n : 101) * pow(10, 2 * d);
+    std::string ans = "Yes";
+    for(char c = 'a';c <= 'c';c++){
+        if(s.find(c) == std::string::npos){
+            ans = "No";
+            break;
+        }
+    }
     std::cout<<ans<<std::endl;
     return 0;
 }

@@ -8,10 +8,9 @@
 #include <cmath>
 
 int main(){
-    int d, n;
-    std::cin>>d>>n;
+    int n;
+    std::cin>>n;
 
-    int ans = (n < 100 ? n : 101) * pow(10, 2 * d);
-    std::cout<<ans<<std::endl;
+    std::cout<<(n / 3)<<std::endl;
     return 0;
 }

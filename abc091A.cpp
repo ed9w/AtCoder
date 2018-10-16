@@ -8,10 +8,16 @@
 #include <cmath>
 
 int main(){
-    int d, n;
-    std::cin>>d>>n;
+    int a, b, c;
+    std::cin>>a>>b>>c;
 
-    int ans = (n < 100 ? n : 101) * pow(10, 2 * d);
+    std::string ans;
+    if(a + b >= c){
+        ans = "Yes";
+    }else{
+        ans = "No";
+    }
+
     std::cout<<ans<<std::endl;
     return 0;
 }

@@ -8,10 +8,13 @@
 #include <cmath>
 
 int main(){
-    int d, n;
-    std::cin>>d>>n;
+    std::vector<std::string> s(3);
+    std::cin>>s[0]>>s[1]>>s[2];
 
-    int ans = (n < 100 ? n : 101) * pow(10, 2 * d);
+    std::string ans = "";
+    for(int i = 0;i < 3;i++){
+        ans += std::string(1, s[i][i]);
+    }
     std::cout<<ans<<std::endl;
     return 0;
 }
