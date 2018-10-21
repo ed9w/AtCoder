@@ -19,6 +19,25 @@ int main(){
     }
 
     std::vector<int> ans(n);
+    for(int i = 0;i < n;i++){
+        std::vector<long long> dist(m);
+        for(int j = 0;j < m;j++){
+            dist[j] = abs(a[i] - c[j]) + abs(b[i] - d[j]);
+        }
+        //std::cout<<"i:"<<i<<std::endl;
+        //for(const auto& x : dist){
+        //    std::cout<<x<<std::endl;
+        //}
 
+        ans[i] = std::distance(dist.begin(),
+                std::min_element(dist.begin(), dist.end()))
+            + 1;
+
+    }
+
+    //std::cout<<"---------------"<<std::endl;
+    for(const auto& x : ans){
+        std::cout<<x<<std::endl;
+    }
     return 0;
 }
