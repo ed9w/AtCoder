@@ -1,22 +1,12 @@
-import numpy as np
+N = int(input())
+a = list(map(int, input().split()))
 
-
-def main():
-    N = int(input())
-    a = map(int, input().split())
-
+if sum(a) % N != 0:
+    print(-1)
+else:
+    k = sum(a) // N
     ans = 0
-    if np.mean(a) == np.sum(a):
-        for i in range(N - 1):
-            left = np.sum(a[: i + 1])
-
-            if (i + 1) * np.mean(a) != left:
-                ans += 1
-    else:
-        ans = -1
-
+    for i in range(N - 1):
+        if sum(a[:i + 1]) != (i + 1) * k:
+            ans += 1
     print(ans)
-
-
-if __name__ == '__main__':
-    main()
